@@ -1,14 +1,11 @@
 #!/bin/bash
 
-if [[ $1 =~ ^[0-9]{1,2}|$ ]] then
+if [[ $1 =~ ^[0-9a-fA-F]{2}([:-][0-9a-fA-F]{2}){5}$ ]]; then
 
-echo "$1 Tiene formato de IP"
+echo "$1 Tiene formato de MAC"
 
 else 
 
-echo "$1 No tiene formato de IP"
+echo "$1 No tiene formato de MAC"
 
 fi
-
-#! Si que funciona porque siguen siendo 3 caractéres separados por puntos.
-
