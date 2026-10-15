@@ -40,7 +40,7 @@ DIC_FILE="/usr/share/dict/spanish"
 ES_PALABRA_DIC="no"
 
 if [ -f "$DIC_FILE" ]; then
-    LOWER_PASS=$(echo "$PASSWORD" | tr '[:upper:]' '[:lower:]')
+    LOWER_PASS=$(echo "$PASSWORD" | tr [A-Za-z])
     if grep -Fxq "$LOWER_PASS" "$DIC_FILE"; then
         ES_PALABRA_DIC="sí"
         SEGURA=false
