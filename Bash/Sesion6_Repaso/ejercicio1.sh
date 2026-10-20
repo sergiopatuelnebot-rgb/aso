@@ -1,3 +1,5 @@
+#!/bin/bash
+
 rutaab='^/([a-z]+/)*[a-z]+$' 
 cont=0
 cont_uid=0
