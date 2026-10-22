@@ -5,6 +5,12 @@ cont=0
 cont_uid=0
 res=$1
 
+if [[ ! $# -eq 1 ]]; then
+
+    echo "Demasiados parámetros"
+    exit 1
+fi
+
 if [[ -z $res ]]; then
 
     res='/bin/bash' 
@@ -17,7 +23,7 @@ if [[ $res =~ $rutaab ]]; then
 
     if [[ $shell_usuario == $res ]]; then
 
-    echo "$usuario:$uid:$home:$shell_usuario"
+        echo "$usuario:$uid:$home:$shell_usuario"
 
         ((cont++))
 
