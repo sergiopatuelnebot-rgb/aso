@@ -8,7 +8,7 @@ fecha=$(date +%F_%H-%M)
 
 comprobacion=$(ssh -o BatchMode=yes servidor true)
 
-$copia=$1
+copia=$1
 
 if (($# != 1)); then
 
@@ -21,7 +21,7 @@ if $comprobacion; then
 
     mkdir -p ~/backups
 
-    scp servidor:"$copia" ~/backups/"$copia"_$fecha
+    scp -r servidor:"$copia" ~/backups/"$copia"_$fecha
     
     ls -l ~/backups/
 
@@ -31,5 +31,4 @@ else
     echo "Error de conexión con el servidor"
     error
     exit 1
-fi
 fi
