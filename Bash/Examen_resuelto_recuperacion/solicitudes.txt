@@ -1,0 +1,8 @@
+jperez:/bin/bash
+mgarcia:/bin/sh
+Ana23:/bin/bash
+root:/bin/bash
+lu:/bin/bash
+tcortes:/bin/zsh
+rmartinez99:/bin/bash
+sruiz2:/bin/sh

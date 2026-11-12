@@ -1,0 +1,28 @@
+# Fichero de configuración del servidor SSH (copia de trabajo)
+
+Include /etc/ssh/sshd_config.d/*.conf
+
+#Port 22
+#AddressFamily any
+#ListenAddress 0.0.0.0
+
+# Autenticación:
+#LoginGraceTime 2m
+#PermitRootLogin prohibit-password
+#MaxAuthTries 6
+#MaxSessions 10
+
+#PubkeyAuthentication yes
+
+# Para desactivar las contraseñas en texto claro, cambia a no
+#PasswordAuthentication yes
+#PermitEmptyPasswords no
+
+KbdInteractiveAuthentication no
+UsePAM yes
+
+X11Forwarding yes
+PrintMotd no
+
+AcceptEnv LANG LC_*
+Subsystem sftp /usr/lib/openssh/sftp-server
