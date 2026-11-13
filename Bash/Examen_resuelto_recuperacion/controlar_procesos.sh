@@ -1,11 +1,11 @@
 #!/bin/bash
 
 forzar_fin(){
-    kill -9 "$1"
+    kill -9 "$pid"
 }
 
 terminar(){
-    kill -15
+    kill -15 "$pid"
 }
 
 
@@ -24,6 +24,24 @@ if [[ $# -eq 1 ]]; then
             if [[ -n $pid ]]; then
             
             ps -p "$pid" -o pid,user,%cpu,comm
+
+            read -p "[f] finalizar, [k] forzar, [n]nada: " opcion
+
+                if [[ $opcion -eq "f" ]]; then
+                terminar
+
+                elif [[ $opcion -eq "k" ]]; then
+                forzar_fin
+
+                elif [[ $opcion -eq "n" ]]; then
+
+                exit 0
+
+                else
+
+                read -p "[f] finalizar, [k] forzar, [n]nada: " opcion
+
+                fi
 
             else
 

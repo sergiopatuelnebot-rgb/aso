@@ -14,11 +14,10 @@ if [[ $# -eq 2 ]]; then
             if [[ $mb -le 4096 ]]; then
 
                 if [[ ! $mb =~ $sinceros ]]; then
-                cp $fichero $fichero.bak
-                echo "Copia del original: $fichero.bak"
-                echo "Configuración inicial"
-                cat "$fichero.bak"
-                sed -i 's/'#'/''/g' $fichero
+
+                    
+
+
 
                 else
 
