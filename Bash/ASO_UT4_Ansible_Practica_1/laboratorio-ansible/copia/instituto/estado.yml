@@ -1,0 +1,20 @@
+---
+- name: Comprobar estado de todos los servidores
+  hosts: all
+  tasks:
+    - name: Ejecutar uptime en formato legible
+      ansible.builtin.command: uptime -p
+      register: resultado_uptime
+      changed_when: false
+
+    - name: Mostrar tiempo encendido del servidor
+      ansible.builtin.debug:
+        msg: "{{ inventory_hostname }} lleva encendido: {{ resultado_uptime.stdout }}"
+
+- name: Actualizar caché en servidores de bases de datos
+  hosts: dbservers
+  become: true
+  tasks:
+    - name: Actualizar caché de paquetes apt
+      ansible.builtin.apt:
+        update_cache: true

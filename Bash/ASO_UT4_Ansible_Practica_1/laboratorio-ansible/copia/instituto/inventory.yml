@@ -1,0 +1,14 @@
+all:
+  vars:
+    ansible_user: ubuntu
+  children:
+    servidores:
+      children:
+        webservers:
+          hosts:
+            web1:
+            web2:
+        dbservers:
+          hosts:
+            db1:
+            db2:

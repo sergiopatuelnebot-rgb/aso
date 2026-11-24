@@ -1,0 +1,10 @@
+---
+- name: Primer contacto con los servidores
+  hosts: all
+  tasks:
+    - name: Comprobar que el servidor se puede gestionar
+      ansible.builtin.ping:
+
+    - name: Mostrar los grupos del servidor
+      ansible.builtin.debug:
+        msg: "{{ inventory_hostname }} pertenece a {{ group_names }}"

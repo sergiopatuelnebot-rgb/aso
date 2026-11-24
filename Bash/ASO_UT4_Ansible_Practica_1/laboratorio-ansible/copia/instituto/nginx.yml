@@ -1,0 +1,19 @@
+---
+- name: Instalar y configurar servidor web Nginx
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Actualizar caché de paquetes
+      ansible.builtin.apt:
+        update_cache: true
+
+    - name: Instalar Nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+
+    - name: Arrancar y habilitar Nginx
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: true
